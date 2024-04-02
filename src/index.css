@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.content-page {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  overflow: scroll;
+  /* Firefox */
+}
+
+.content-page::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
