@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 
 function AddSiswa() {
   const [nama_siswa, setNama] = useState("");
-  const [jurusan, setJurusan] = useState("");
   const [tanggalLahir, setTanggalLahir] = useState("");
   const [nisn, setNisn] = useState("");
   const [umur, setUmur] = useState("");
@@ -19,7 +18,6 @@ function AddSiswa() {
 
     const newSiswa = {
       nama_siswa,
-      jurusan,
       tanggalLahir,
       nisn,
       umur,
@@ -100,33 +98,18 @@ function AddSiswa() {
             Tambah Siswa
           </p>
           <form onSubmit={addSiswa}>
-            <div className="relative mt-3">
-              <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900 ">
-                Nama
-              </label>
-              <input
-                type="text"
-                id="nama_siswa"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm sm:text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Masukan Nama"
-                value={nama_siswa}
-                onChange={(e) => setNama(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
+            <div className="grid grid-cols-2 gap-4">
               <div className="relative">
                 <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900 ">
-                  Jurusan
+                  Nama
                 </label>
                 <input
                   type="text"
-                  id="jurusan"
+                  id="nama_siswa"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm sm:text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                  placeholder="Masukan Jurusan"
-                  value={jurusan}
-                  onChange={(e) => setJurusan(e.target.value)}
+                  placeholder="Masukan Nama"
+                  value={nama_siswa}
+                  onChange={(e) => setNama(e.target.value)}
                   required
                 />
               </div>
@@ -144,9 +127,6 @@ function AddSiswa() {
                   required
                 />
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
               <div className="relative">
                 <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900 ">
                   Nisn
@@ -175,9 +155,6 @@ function AddSiswa() {
                   required
                 />
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
               <div className="relative">
                 <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900 ">
                   Alamat
@@ -205,6 +182,8 @@ function AddSiswa() {
                     setSelectedKelas({
                       id: e.target.value,
                       nama_kelas: e.target.options[e.target.selectedIndex].text,
+                      nama_jurusan:
+                        e.target.options[e.target.selectedIndex].text,
                     })
                   }
                   required
@@ -214,79 +193,78 @@ function AddSiswa() {
                   </option>
                   {kelas.map((kelasItem) => (
                     <option key={kelasItem.id} value={kelasItem.id}>
-                      {kelasItem.nama_kelas}
+                      {kelasItem.nama_kelas} {kelasItem.nama_jurusan}
                     </option>
                   ))}
                 </select>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 text-center mt-2">
-              <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900  text-left col-span-2">
-                Jenis Kelamin
-              </label>
-              <div className="relative mt-[-20px]">
-                <input
-                  autoComplete="off"
-                  className="group peer hidden"
-                  type="radio"
-                  name="shippingOption"
-                  value="Laki-Laki"
-                  id="Laki"
-                  onChange={(e) => setJenisKelamin(e.target.value)}
-                />
-
-                <label
-                  htmlFor="Laki"
-                  className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 cursor-pointer rounded-lg border p-2 text-sm sm:text-xs font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
-                >
-                  <span> Laki-Laki </span>
+              <div className="grid grid-cols-2 gap-4 text-center mt-2 col-span-2">
+                <label className="block mb-2 text-sm sm:text-xs font-medium text-gray-900  text-left col-span-2">
+                  Jenis Kelamin
                 </label>
-
-                <svg
-                  className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
+                <div className="relative mt-[-20px]">
+                  <input
+                    autoComplete="off"
+                    className="group peer hidden"
+                    type="radio"
+                    name="shippingOption"
+                    value="Laki-Laki"
+                    id="Laki"
+                    onChange={(e) => setJenisKelamin(e.target.value)}
                   />
-                </svg>
-              </div>
 
-              <div className="relative mt-[-20px]">
-                <input
-                  autoComplete="off"
-                  className="group peer hidden"
-                  type="radio"
-                  name="shippingOption"
-                  value="Perempuan"
-                  id="Perempuan"
-                  onChange={(e) => setJenisKelamin(e.target.value)}
-                />
+                  <label
+                    htmlFor="Laki"
+                    className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 cursor-pointer rounded-lg border p-2 text-sm sm:text-xs font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
+                  >
+                    <span> Laki-Laki </span>
+                  </label>
 
-                <label
-                  htmlFor="Perempuan"
-                  className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 cursor-pointer rounded-lg p-2 text-sm sm:text-xs font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
-                >
-                  <span> Perempuan </span>
-                </label>
+                  <svg
+                    className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
 
-                <svg
-                  className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
+                <div className="relative mt-[-20px]">
+                  <input
+                    autoComplete="off"
+                    className="group peer hidden"
+                    type="radio"
+                    name="shippingOption"
+                    value="Perempuan"
+                    id="Perempuan"
+                    onChange={(e) => setJenisKelamin(e.target.value)}
                   />
-                </svg>
+
+                  <label
+                    htmlFor="Perempuan"
+                    className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 cursor-pointer rounded-lg p-2 text-sm sm:text-xs font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
+                  >
+                    <span> Perempuan </span>
+                  </label>
+
+                  <svg
+                    className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 

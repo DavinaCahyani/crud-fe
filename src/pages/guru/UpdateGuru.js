@@ -155,7 +155,7 @@ function UpdateGuru() {
             Update Guru
           </p>
           <form onSubmit={submitActionHandler}>
-            <div className="relative mt-3">
+            <div className="relative mb-3">
               <label className="block mb-1 text-sm font-medium text-gray-900">
                 Nama
               </label>
@@ -169,8 +169,7 @@ function UpdateGuru() {
                 required
               />
             </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
+            <div className="grid grid-cols-2 gap-4">
               <div className="relative">
                 <label className="block mb-1 text-sm font-medium text-gray-900">
                   Jabatan
@@ -185,7 +184,6 @@ function UpdateGuru() {
                   required
                 />
               </div>
-
               <div className="relative">
                 <label className="block mb-1 text-sm font-medium text-gray-900">
                   Tanggal Lahir
@@ -200,9 +198,6 @@ function UpdateGuru() {
                   required
                 />
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
               <div className="relative">
                 <label className="block mb-1 text-sm font-medium text-gray-900">
                   No Telepon
@@ -230,10 +225,7 @@ function UpdateGuru() {
                   onChange={emailChangeHandler}
                   required
                 />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-2">
+              </div>{" "}
               <div className="relative">
                 <label className="block mb-1 text-sm font-medium text-gray-900">
                   Alamat
@@ -248,7 +240,6 @@ function UpdateGuru() {
                   required
                 />
               </div>
-
               <div className="relative">
                 <label className="block mb-1 text-sm font-medium text-gray-900">
                   Mapel
@@ -271,74 +262,73 @@ function UpdateGuru() {
                   ))}
                 </select>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 text-center mt-2">
-              <label className="block mb-1 text-sm font-medium text-gray-900  text-left col-span-2">
-                Jenis Kelamin
-              </label>
-              <div className="relative mt-[-20px]">
-                <input
-                  autoComplete="off"
-                  className="group peer hidden "
-                  type="radio"
-                  name="shippingOption"
-                  value="Laki-Laki"
-                  id="Laki"
-                  onChange={jenisKelaminChangeHandler}
-                />
-
-                <label
-                  htmlFor="Laki"
-                  className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 cursor-pointer rounded-lg border p-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
-                >
-                  <span> Laki-Laki </span>
+              <div className="grid grid-cols-2 gap-4 text-center mt-2 col-span-2">
+                <label className="block mb-1 text-sm font-medium text-gray-900  text-left col-span-2">
+                  Jenis Kelamin
                 </label>
-
-                <svg
-                  className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
+                <div className="relative mt-[-20px]">
+                  <input
+                    autoComplete="off"
+                    className="group peer hidden "
+                    type="radio"
+                    name="shippingOption"
+                    value="Laki-Laki"
+                    id="Laki"
+                    onChange={jenisKelaminChangeHandler}
                   />
-                </svg>
-              </div>
 
-              <div className="relative mt-[-20px]">
-                <input
-                  autoComplete="off"
-                  className="group peer hidden"
-                  type="radio"
-                  name="shippingOption"
-                  value="Perempuan"
-                  id="Perempuan"
-                  onChange={jenisKelaminChangeHandler}
-                />
+                  <label
+                    htmlFor="Laki"
+                    className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 cursor-pointer rounded-lg border p-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
+                  >
+                    <span> Laki-Laki </span>
+                  </label>
 
-                <label
-                  htmlFor="Perempuan"
-                  className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 cursor-pointer rounded-lg p-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
-                >
-                  <span> Perempuan </span>
-                </label>
+                  <svg
+                    className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
 
-                <svg
-                  className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
+                <div className="relative mt-[-20px]">
+                  <input
+                    autoComplete="off"
+                    className="group peer hidden"
+                    type="radio"
+                    name="shippingOption"
+                    value="Perempuan"
+                    id="Perempuan"
+                    onChange={jenisKelaminChangeHandler}
                   />
-                </svg>
+
+                  <label
+                    htmlFor="Perempuan"
+                    className=" relative block bg-white overflow-hidden rounded-md border border-gray-200 cursor-pointer rounded-lg p-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500"
+                  >
+                    <span> Perempuan </span>
+                  </label>
+
+                  <svg
+                    className="absolute top-3 right-4 h-5 w-5 text-blue-600 opacity-0 peer-checked:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 

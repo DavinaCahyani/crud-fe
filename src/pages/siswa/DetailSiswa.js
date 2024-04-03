@@ -6,7 +6,6 @@ import axios from "axios";
 function DetailSiswa() {
   const { id } = useParams(); // Mengambil id dari parameter URL
   const [nama_siswa, setNama] = useState("");
-  const [jurusan, setJurusan] = useState("");
   const [tanggalLahir, setTanggalLahir] = useState("");
   const [nisn, setNisn] = useState("");
   const [umur, setUmur] = useState("");
@@ -32,7 +31,6 @@ function DetailSiswa() {
 
         // Mengisi state dengan data yang didapatkan dari API
         setNama(dataSiswa.nama_siswa);
-        setJurusan(dataSiswa.jurusan);
         setKelas(dataSiswa.kelasModel.nama_kelas);
         setTanggalLahir(dataSiswa.tanggalLahir);
         setNisn(dataSiswa.nisn);
@@ -69,14 +67,6 @@ function DetailSiswa() {
               </label>
               <p className="col-span-3 text-md font-bold text-gray-900 ml-3">
                 {nama_siswa}
-              </p>
-            </div>
-            <div className="grid grid-cols-5 mb-4 ml-4">
-              <label className="block text-sm font-medium text-gray-700 pr-2 col-span-2 text-left">
-                Jurusan:
-              </label>
-              <p className="col-span-3 text-md font-bold text-gray-900 ml-3">
-                {jurusan}
               </p>
             </div>
             <div className="grid grid-cols-5 mb-4 ml-4">

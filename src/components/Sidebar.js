@@ -1,3 +1,15 @@
+import {
+  faAddressCard,
+  faClipboard,
+  faUser,
+} from "@fortawesome/free-regular-svg-icons";
+import {
+  faArrowRightFromBracket,
+  faBook,
+  faChartLine,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Swal from "sweetalert2";
 
@@ -193,7 +205,7 @@ function Sidebar({ page }) {
         >
           <a href="/dashboard" className="flex gap-5">
             <div>
-              <i className="fa-solid fa-chart-line"></i>
+              <FontAwesomeIcon icon={faChartLine} />
             </div>
             <div>Dashboard</div>
           </a>
@@ -205,7 +217,7 @@ function Sidebar({ page }) {
         >
           <a href="/guru" className="flex gap-5">
             <div>
-              <i className="fa-regular fa-user"></i>
+              <FontAwesomeIcon icon={faUser} />
             </div>
             <div>Guru</div>
           </a>
@@ -217,7 +229,7 @@ function Sidebar({ page }) {
         >
           <a href="/siswa" className="flex gap-5">
             <div>
-              <i className="fa-regular fa-address-card"></i>
+              <FontAwesomeIcon icon={faAddressCard} />
             </div>
             <div>Siswa</div>
           </a>
@@ -229,7 +241,7 @@ function Sidebar({ page }) {
         >
           <a href="/mapel" className="flex gap-5">
             <div>
-              <i className="fa-solid fa-gear"></i>
+              <FontAwesomeIcon icon={faBook} />
             </div>
             <div>Mapel</div>
           </a>
@@ -241,7 +253,7 @@ function Sidebar({ page }) {
         >
           <a href="/kelas" className="flex gap-5">
             <div>
-              <i className="fa-solid fa-gear"></i>
+              <FontAwesomeIcon icon={faClipboard} />
             </div>
             <div>Kelas</div>
           </a>
@@ -259,7 +271,7 @@ function Sidebar({ page }) {
             className="flex gap-5"
           >
             <div>
-              <i className="fa-solid fa-arrow-right-from-bracket"></i>
+              <FontAwesomeIcon icon={faArrowRightFromBracket} />
             </div>
             <div>Logout</div>
           </a>
